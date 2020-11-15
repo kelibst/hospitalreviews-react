@@ -27,7 +27,7 @@ const ConfirmDelete = (props) => {
 
             
                 Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
-                Axios.delete(`/api/v1/hospitals/${slug}.json`)
+                Axios.delete(`https://hospitalreviews-api.herokuapp.com/api/v1/hospitals/${slug}.json`)
                 .then(res => {
                     console.log(res)
                     let newHospitalsList = hospitals.filter(host => host.id !== currentHospital.id)
@@ -39,7 +39,7 @@ const ConfirmDelete = (props) => {
         } else if(status === "Review"){
             const csrfToken = document.querySelector("[name=csrf-token]").content;
             Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
-            Axios.delete(`/api/v1/reviews/${sRev.id}.json`)
+            Axios.delete(`https://hospitalreviews-api.herokuapp.com/api/v1/reviews/${sRev.id}.json`)
             .then(res => {
                 let newReviews = reviews.filter(rev => rev.id !== sRev.id)
                updateReviews(newReviews)

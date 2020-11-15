@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Button, Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { Redirect, useHistory } from "react-router-dom";
-import CountryList from "../../../assets/CountryList";
+import CountryList from '../containers/CountryList'
 import { ErrorContext } from "../../contexts/ErrorContext";
 import { HospitalsContext } from "../../contexts/HospitalsContext";
 
@@ -38,7 +38,7 @@ const AddHospitalForm = (props) => {
       hospital.name = hospital.name.trim();
       
       Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
-      Axios.post("/api/v1/hospitals.json", { hospital })
+      Axios.post("https://hospitalreviews-api.herokuapp.com/api/v1/hospitals.json", { hospital })
         .then((res) => {
           const newHost = [...hospitals, res.data]
           addNewHospital(newHost)
@@ -51,7 +51,7 @@ const AddHospitalForm = (props) => {
           } else if (err.request) {
             addError(err.request)
           } else {
-            message = {error: {
+            const message = {error: {
               name: "something went wrong"
             }}
             addError(message)
@@ -64,7 +64,7 @@ const AddHospitalForm = (props) => {
      
       
       Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
-      Axios.patch(`/api/v1/hospitals/${slug}.json`, { hospital })
+      Axios.patch(`https://hospitalreviews-api.herokuapp.com/api/v1/hospitals/${slug}.json`, { hospital })
         .then((res) => {
           currentHospital.body.slug = string_parameterize(currentHospital.name)
           setCurrentHospital(Object.assign({}, currentHospital, hospital ))
@@ -76,7 +76,7 @@ const AddHospitalForm = (props) => {
           } else if (err.request) {
             addError(err.request)
           } else {
-            message = {error: {
+            const message = {error: {
               name: "something went wrong"
             }}
             addError(message)

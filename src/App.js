@@ -11,6 +11,7 @@ import SideBar from './components/layouts/SideBar.js'
 import Footer from './components/layouts/Footer';
 import UserInfo from './components/layouts/UserInfo';
 import Hospitals from './components/Hospitals/Hospitals';
+import Hospital from './components/Hospital/Hospital';
 
 const App = () =>{
   return (
@@ -25,6 +26,7 @@ const App = () =>{
           <UserInfo />  
           <Switch>
             <Route exact path="/" component={Hospitals} />
+            <Route exact path="/hospitals/:slug" component={Hospital} />
           </Switch>    
             <div className="d-sm-none">
                 <Footer />
