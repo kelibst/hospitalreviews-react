@@ -111,6 +111,9 @@ $default-blue: rgb(79, 76, 233);
 }
 
 @media screen and(max-width: 576px){
+    h1{
+        font-size: 2rem;
+    }
     .mob{
         flex-direction: row;
         justify-content: space-around;

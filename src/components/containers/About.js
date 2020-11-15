@@ -9,9 +9,9 @@ const errorIcon = {
 const About = () => {
   return (
     <div className="container">
-      <div className="notfound">
+      <div className="notfound d-block d-sm-flex">
         <div className="notfound-header">
-          <h1 className="text-center font-weight-bolder my-5">Oh! Hey!</h1>
+          <h1 className="text-center font-weight-bolder text-center my-5">Oh! Hey!</h1>
           <div className="bounce-bottom">
             <Icofont
               icon="nerd-smile"

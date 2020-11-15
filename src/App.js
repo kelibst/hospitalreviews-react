@@ -12,7 +12,8 @@ import Footer from './components/layouts/Footer';
 import UserInfo from './components/layouts/UserInfo';
 import Hospitals from './components/Hospitals/Hospitals';
 import Hospital from './components/Hospital/Hospital';
-
+import About from './components/containers/About'
+import notFound from './components/containers/notFound'
 const App = () =>{
   return (
     <div className="wrapper d-sm-flex">
@@ -27,12 +28,15 @@ const App = () =>{
           <Switch>
             <Route exact path="/" component={Hospitals} />
             <Route exact path="/hospitals/:slug" component={Hospital} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/404" component={notFound} /> 
           </Switch>    
-            <div className="d-sm-none">
-                <Footer />
-            </div>
+            
         </div>
 
+        <div className="d-sm-none">
+            <Footer />
+        </div>
         </ErrorContextProvider>
       </ReviewsContextProvider>
     </HospitalsContextProvider>

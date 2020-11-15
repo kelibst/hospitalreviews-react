@@ -10,7 +10,7 @@ const errorIcon = {
 const notFound = () => {
     return (
         <div className="container">
-            <div className="notfound">
+            <div className="notfound d-block d-sm-flex">
                 <div className="notfound-header">
                 <h1 className="text-center font-weight-bolder my-5">Page Not Found!</h1> 
                 <div className="bounce-bottom">

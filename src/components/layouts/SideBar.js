@@ -20,7 +20,6 @@ const SideBar = () => {
             </header>
 
             <MobileNavBar />
-            <Footer />
 
         </aside>
 
