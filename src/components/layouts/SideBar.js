@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Icofont from 'react-icofont'
-import { HospitalsContext } from '../../contexts/HospitalsContext'
 import Footer from './Footer'
 import MobileNavBar from './MobileNavBar'
 import NavBar from './NavBar'
@@ -19,7 +18,10 @@ const SideBar = () => {
                 </div>
                
             </header>
-             <MobileNavBar />
+
+            <MobileNavBar />
+            <Footer />
+
         </aside>
 
         <aside className="sidebar d-none d-sm-block">
@@ -36,6 +38,8 @@ const SideBar = () => {
             </header>
            
             <NavBar />
+
+            <Footer />
         </aside>
 
 

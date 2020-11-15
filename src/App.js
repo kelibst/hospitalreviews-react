@@ -9,6 +9,8 @@ import ReviewsContextProvider from './contexts/ReviewsContext';
 import ErrorContextProvider from './contexts/ErrorContext';
 import SideBar from './components/layouts/SideBar.js'
 import Footer from './components/layouts/Footer';
+import UserInfo from './components/layouts/UserInfo';
+import Hospitals from './components/Hospitals/Hospitals';
 
 const App = () =>{
   return (
@@ -16,13 +18,17 @@ const App = () =>{
     <HospitalsContextProvider>
       <ReviewsContextProvider>
         <ErrorContextProvider>
-        
-      <SideBar />
+         <SideBar />
+     
 
-      <div className="content bg-light">        
-          <div className="d-sm-none">
-              <Footer />
-          </div>
+        <div className="content bg-light">  
+          <UserInfo />  
+          <Switch>
+            <Route exact path="/" component={Hospitals} />
+          </Switch>    
+            <div className="d-sm-none">
+                <Footer />
+            </div>
         </div>
 
         </ErrorContextProvider>

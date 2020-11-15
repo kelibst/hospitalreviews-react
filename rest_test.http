@@ -1,0 +1,74 @@
+    # GET list of all hospital in json format
+    # GET  https://hospitalreviews-api.herokuapp.com/api/v1/hospitals.json HTTP/1.1
+    # content-type: application/json
+
+    #GET single hospital
+    # GET  http://127.0.0.1:3000/api/v1/hospitals/kekeli-hospital-accra-new.json HTTP/1.1
+    # content-type: application/json
+    
+    # create a new hospital
+    # POST https://hospitalreviews-api.herokuapp.com/api/v1/hospitals.json HTTP/1.1
+    # content-type: application/json
+
+    # {
+    #     "name":"Aflao Hospital",
+    #     "country":"Ghana",
+    #     "address":"Aflao",
+    #     "city":"Aflao",
+    #     "image": "https://www.royalhospitalho.com/my_uploads/2020/03/302bff67-415f-4eb6-b61e-ea95c263635c.jpg"
+    # }
+
+    #delete a hospital
+    # volta-region-municipal-hospital
+    # kekeli-hospital
+    # aflao-hospital
+
+    # DELETEhttps://hospitalreviews-api.herokuapp.com/api/v1/hospitals/kekeli-hospital-accra-new.json HTTP/1.1
+    # content-type: application/json
+
+    #update a hospital record
+
+    # PATCH https://hospitalreviews-api.herokuapp.com/api/v1/hospitals/aflao-hospital.json HTTP/1.1
+    # content-type: application/json
+
+    # {
+    #     "city": "Aflao"
+    # }
+
+    # Review test
+
+    # # GET list of all review in json format
+    # GET https://hospitalreviews-api.herokuapp.com/api/v1/reviews.json HTTP/1.1
+    # content-type: application/json
+
+
+    # # create a new review
+    # POST https://hospitalreviews-api.herokuapp.com/api/v1/reviews.json HTTP/1.1
+    # content-type: application/json
+
+    # {
+    #     "reviewer_name":"Kekeli Dogbevi",
+    #     "title":"Great hospital",
+    #     "description":"some long description about this crazy review. blah blah blah!",
+    #     "score": 5,
+    #     "hospital_id": 2
+    # }
+
+    # GET single review
+    # GET https://hospitalreviews-api.herokuapp.com/api/v1/reviews/4.json HTTP/1.1
+    # content-type: application/json
+
+
+    #update a review
+    # PATCHhttps://hospitalreviews-api.herokuapp.com/api/v1/reviews/1.json HTTP/1.1
+    # content-type: application/json
+
+    # {
+    #     "title": "awesome new title"
+    # }
+
+
+    # review delete test
+
+    # DELETEhttps://hospitalreviews-api.herokuapp.com/api/v1/reviews/3.json HTTP/1.1
+    # content-type: application/json
