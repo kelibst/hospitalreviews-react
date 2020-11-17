@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { Button, Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import CountryList from '../containers/CountryList'
 import { ErrorContext } from "../../contexts/ErrorContext";
 import { HospitalsContext } from "../../contexts/HospitalsContext";
@@ -27,7 +27,7 @@ const AddHospitalForm = (props) => {
                               slug: currentHospital.body ? currentHospital.body.slug : ""
                             }
     );
-  const {status, show, close } = props;  
+  const {status, close } = props;  
   
   // const { country, address, city, image} = hospital.body
   const handleChange = (e) => {
@@ -35,9 +35,7 @@ const AddHospitalForm = (props) => {
      (setHospital(Object.assign({}, hospital, { [id]: value })))
   };
   
-  const string_parameterize =  (str1) =>{
-    return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
-  };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,6 +48,13 @@ const AddHospitalForm = (props) => {
           const newHost = [...hospitals, res.data]
           addNewHospital(newHost)
           setCurrentHospital(res.data)
+          setHospital(  { name: currentHospital.name ? currentHospital.name : "",
+                          country:  "",
+                          city:     "",
+                          address:  "",
+                          image:    "", 
+                          slug:     ""
+                      })
           history.push(`/hospitals/${res.data.body.slug}`)
         })
         .catch((err) => {

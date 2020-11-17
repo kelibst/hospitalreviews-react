@@ -12,7 +12,7 @@ import { ReviewsContext } from "../../contexts/ReviewsContext";
 const AddReview = (props) => {
 
 
-  const { hospital, initalReview, status, show, close } = props;  
+  const { hospital, initalReview, status, close } = props;  
   const {addError} = useContext(ErrorContext)
   
   const {reviews, updateReviews  } = useContext(ReviewsContext)

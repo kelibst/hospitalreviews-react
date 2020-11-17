@@ -27,7 +27,7 @@ const HospitalList = ({ data }) => {
                     <div className="d-flex align-items-center"><div className="font-weight-bolder">Address:</div><div className="card-sc-btn">{ address }</div></div>
                     
                     <div className="d-flex align-items-center"><div className="font-weight-bolder">City</div><div className="card-sc-btn">{ city }</div></div>
-                    <div className="d-flex align-items-center"><div className="font-weight-bolder">Address</div><div className="card-sc-btn">{ country }</div></div>
+                    <div className="d-flex align-items-center"><div className="font-weight-bolder">Country</div><div className="card-sc-btn">{ country }</div></div>
                 </div>
                 
                 <div className="card-actions">

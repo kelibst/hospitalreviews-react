@@ -4,29 +4,32 @@ A basic npx create-react-app for the hospitalreviews api
 
 
 # Expectations
-- one page with a list of items that could be filtered by some parameters; 
-- one page for the item details; 
+- Homepage fetches all hospitals from the api
+- Each hospital detail page with reviews and review form 
 
-- Basic movies app
+- Basic Review management application
 - Users can:
-    - See all recent movies
-    - Order movies by selected categories
+    - Add a new hospital
+    - Update a hospital
+    - Delete a hospital
+    - Add a new review
+    - Update and existing review
+    - Delete and existing review
 
 # Screenshot
 ![Screenshot](./screenshot.gif)
 
 # Live Demo
-[Live Demo Link](https://kelimovies.herokuapp.com/) 
+[Live Demo Link](https://hospitalreviews-react.herokuapp.com/) 
 
-[Presentation Link](https://www.loom.com/share/542e4942261c4de7a4815fa226b8844e) 
+[![](screenshot.png)](https://www.loom.com/share/77ad47b927854afab0ef9d348ca6c8e4) 
 
 # Built With
 
 - HTML 
 - CSS
 - SCSS
-- BOOTSTRAP
-- JAVASCRIPT
+- REACT-BOOTSTRAP
 - NPM
 - REACT
 - NODE
@@ -38,15 +41,14 @@ A basic npx create-react-app for the hospitalreviews api
 ### Usage
 - Clone the project 
 ```
-git clone https://github.com/kelibst/react_movies.git
+git clone https://github.com/kelibst/hospitalreviews-react.git
 ```
 - Run `npm install` to install the local dependencies
 - Run `npm start` to launch local development server
 - The project should launch in your default browser
-- Visit [ThemovieDb](https://www.themoviedb.org/settings/api) website and register for an api key
-- create an .env file in the root folder and add 
-`REACT_APP_MOVIEDB_API_KEY=YOUR_REACT_API_GOES_HERE`
-- Make sure you replace `YOUR_REACT_API_GOES_HERE` with you own key
+- you can get the Rails [api](https://github.com/kelibst/review_manager) code here
+- visit http://127.0.0.1:3000/
+- You can also visit [live](https://hospitalreviews-react.herokuapp.com/) version for the full appp
 
 
 ## Authors

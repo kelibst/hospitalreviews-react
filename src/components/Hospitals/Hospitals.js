@@ -12,7 +12,7 @@ import './hospitals.scss'
 const Hospitals = () => {
     const  { hospitals, addNewHospital }  =  useContext(HospitalsContext)
     const [loading, setLoading] = useState(true)
-    const  { error, addError }  =  useContext(ErrorContext)
+    const  { addError }  =  useContext(ErrorContext)
    
     useEffect(() => {
         // get all the hospitals

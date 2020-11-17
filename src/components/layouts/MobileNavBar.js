@@ -1,7 +1,7 @@
 import React from 'react'
 import Icofont from 'react-icofont'
 import { NavLink } from 'react-router-dom'
-// import AddHospital from '../Hospitals/AddHospital'
+import AddHospital from '../Hospitals/AddHospital'
 
 const MobileNavBar = () => {
     return (
@@ -14,8 +14,15 @@ const MobileNavBar = () => {
                     <NavLink className="nav-link text-light" to="/about"><Icofont icon="teacher" className="nav-icons"/></NavLink>
                 </li>
             </ul>
-
-          
+            <AddHospital status="Add" hospital = {
+                {
+                 "name":"",
+                 "country":"",
+                 "address":"",
+                 "city":"",
+                 "image": ""
+                 }
+         } />
         </nav> 
     )
 }
