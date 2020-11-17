@@ -11,11 +11,11 @@ import { ReviewsContext } from "../../contexts/ReviewsContext";
 
 const AddReview = (props) => {
 
-  const [validated, setValidated] = useState(false);
+
   const { hospital, initalReview, status, show, close } = props;  
   const {addError} = useContext(ErrorContext)
   
-  const {reviews, updateReviews, currentReview, updateCurrentReview  } = useContext(ReviewsContext)
+  const {reviews, updateReviews  } = useContext(ReviewsContext)
   
   const [review, setReview] = useState(initalReview);
   
