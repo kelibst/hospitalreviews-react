@@ -67,15 +67,13 @@ const AddHospitalForm = (props) => {
       close();
     }else if(status === "Update"){
       const { slug } = currentHospital.body
-      hospital.name = currentHospital.name.trim();
+      hospital.name = hospital.name.trim();
      
       
       Axios.patch(`https://hospitalreviews-api.herokuapp.com/api/v1/hospitals/${slug}.json`, { hospital })
         .then((res) => {
-          console.log(res.data)
-          currentHospital.body.slug = string_parameterize(currentHospital.name)
           setCurrentHospital(Object.assign({}, currentHospital, res.data ))
-          history.push(`/hospitals/${currentHospital.body.slug}`)
+          history.push(`/hospitals/${res.data.body.slug}`)
         })
         .catch((err) => {
           if (err.response) {
