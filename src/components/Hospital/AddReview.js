@@ -3,8 +3,9 @@ import React, { useContext, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import ReactStars from "react-rating-stars-component";
+import { ErrorContext } from "../../contexts/ErrorContext";
 import { ReviewsContext } from "../../contexts/ReviewsContext";
-import ReviewToast from "./ReviewToast";
+
 
 
 
@@ -12,6 +13,7 @@ const AddReview = (props) => {
 
   const [validated, setValidated] = useState(false);
   const { hospital, initalReview, status, show, close } = props;  
+  const {addError} = useContext(ErrorContext)
   
   const {reviews, updateReviews, currentReview, updateCurrentReview  } = useContext(ReviewsContext)
   
@@ -35,12 +37,20 @@ const AddReview = (props) => {
      
       Axios.post("https://hospitalreviews-api.herokuapp.com/api/v1/reviews.json", { review, hospital_id })
         .then((res) => {
-          let allRev = [...reviews, res.data]
-          console.log(allRev)
+          let allRev = [...reviews, review]
           updateReviews(allRev)
         })
         .catch((err) => {
-          debugger;
+          if (err.response) {
+            addError(err.response)
+          } else if (err.request) {
+            addError(err.request)
+          } else {
+            const message = {error: {
+              name: "Try to refresh the browser."
+            }}
+            addError(message)
+          }
         });
       close();
     }else if(status === "Update"){
@@ -52,7 +62,16 @@ const AddReview = (props) => {
           updateReviews(allRev)
         })
         .catch((err) => {
-          debugger;
+           if (err.response) {
+            addError(err.response)
+          } else if (err.request) {
+            addError(err.request)
+          } else {
+            const message = {error: {
+              name: "Try to refresh the browser."
+            }}
+            addError(message)
+          }
         });
       close();
     }
