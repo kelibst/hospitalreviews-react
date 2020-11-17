@@ -15,6 +15,7 @@ const Hospital = (props) => {
      const [loading, setLoading] = useState(true)
      const { slug } = props.match.params
      const {error, addError } = useContext(ErrorContext)
+
      useEffect(() => {
          // get individual hospital
          Axios.get(`https://hospitalreviews-api.herokuapp.com/api/v1/hospitals/${slug}.json`)
@@ -23,6 +24,7 @@ const Hospital = (props) => {
              setCurrentHospital(res.data)
              updateReviews(res.data.reviews.reviews_all)
          }).catch(err => {
+             setLoading(false)
              addError(err)
              if(err.response){
                 err.response.status === 404 && props.history.push('/404')

@@ -17,7 +17,14 @@ const AddHospitalForm = (props) => {
   let history = useHistory()
   
   const [validated, setValidated] = useState(false);
-  const [hospital, setHospital] = useState({});
+  const [hospital, setHospital] = useState(
+                            {name: "",
+                             country: "",
+                              city: "",
+                              address: "",
+                              image: "", 
+                              slug: ""}
+    );
   const {status, show, close } = props;  
   
   // const { country, address, city, image} = hospital.body
@@ -32,12 +39,10 @@ const AddHospitalForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const csrfToken = document.querySelector("[name=csrf-token]").content;
     
     if(status === 'Add'){
       hospital.name = hospital.name.trim();
       
-      Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
       Axios.post("https://hospitalreviews-api.herokuapp.com/api/v1/hospitals.json", { hospital })
         .then((res) => {
           const newHost = [...hospitals, res.data]
@@ -52,7 +57,7 @@ const AddHospitalForm = (props) => {
             addError(err.request)
           } else {
             const message = {error: {
-              name: "something went wrong"
+              name: "Try to refresh the browser."
             }}
             addError(message)
           }
@@ -63,7 +68,6 @@ const AddHospitalForm = (props) => {
       hospital.name = currentHospital.name.trim();
      
       
-      Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
       Axios.patch(`https://hospitalreviews-api.herokuapp.com/api/v1/hospitals/${slug}.json`, { hospital })
         .then((res) => {
           currentHospital.body.slug = string_parameterize(currentHospital.name)
@@ -87,6 +91,7 @@ const AddHospitalForm = (props) => {
    
     
   };
+  
   const greVal = status === "Add" ? hospital : currentHospital
   return (
     <div className="form-container">

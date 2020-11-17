@@ -147,6 +147,12 @@ $default-blue: rgb(79, 76, 233);
         }
 
     }
-    
+    .footer{
+        @include default-gradient();
+        color: white;
+        text-align: center;
+        position: relative;
+        bottom: 2rem;
+    }
 }
 

@@ -36,6 +36,7 @@ const AddReview = (props) => {
       Axios.post("https://hospitalreviews-api.herokuapp.com/api/v1/reviews.json", { review, hospital_id })
         .then((res) => {
           let allRev = [...reviews, res.data]
+          console.log(allRev)
           updateReviews(allRev)
         })
         .catch((err) => {

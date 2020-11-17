@@ -19,17 +19,12 @@ const ConfirmDelete = (props) => {
 
     
     const handleDelete = (e) => {
-        const csrfToken = document.querySelector("[name=csrf-token]").content;
-       
+             
         if(status === "Hospital"){
             const { slug } = currentHospital.body
-         
-
             
-                Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
                 Axios.delete(`https://hospitalreviews-api.herokuapp.com/api/v1/hospitals/${slug}.json`)
                 .then(res => {
-                    console.log(res)
                     let newHospitalsList = hospitals.filter(host => host.id !== currentHospital.id)
                     addNewHospital(newHospitalsList)
                     history.push('/')
@@ -37,8 +32,7 @@ const ConfirmDelete = (props) => {
                     err.response.status === 404 && console.log("Page not found")  
             })
         } else if(status === "Review"){
-            const csrfToken = document.querySelector("[name=csrf-token]").content;
-            Axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
+    
             Axios.delete(`https://hospitalreviews-api.herokuapp.com/api/v1/reviews/${sRev.id}.json`)
             .then(res => {
                 let newReviews = reviews.filter(rev => rev.id !== sRev.id)
