@@ -1,7 +1,7 @@
 import React from "react";
 import Icofont from "react-icofont";
 import { NavLink } from "react-router-dom";
-import AddHospital from '../Hospitals/AddHospital'
+import AddHospital from "../Hospitals/AddHospital";
 
 const NavBar = () => {
   return (

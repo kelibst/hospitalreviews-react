@@ -13,7 +13,9 @@ const AlertContainer = () => {
         <Alert.Heading>Sorry Something went wrong!</Alert.Heading>
         <div>
           {error.request && <h6 className="my-5">{error.request.response}</h6>}
-          {error.response && <h6 className="my-5">{error.response.data.error}</h6>}
+          {error.response && (
+            <h6 className="my-5">{error.response.data.error}</h6>
+          )}
         </div>
         <hr />
         <div className="d-flex justify-content-end">

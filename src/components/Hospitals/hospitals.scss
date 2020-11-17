@@ -1,37 +1,36 @@
 .content {
-    width: 100%;
-    padding-top: 4rem;
+  width: 100%;
+  padding-top: 4rem;
 }
 
-.text{
-    &-default{
-        color:  #e42dfd;
-    }
+.text {
+  &-default {
+    color: #e42dfd;
+  }
 }
 
-.card{
-    &-sc-btn {
+.card {
+  &-sc-btn {
     margin: 1rem 0.5rem;
     border: 1px solid #d7d7d7;
-    padding: .5rem;
-    
-    }
-
-    &-overview{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
+    padding: 0.5rem;
   }
 
-  .notfound {
+  &-overview {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    height: 100vh;
+  }
 }
 
-.actions{
-    display: flex;
-    justify-content: center;
+.notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
 }

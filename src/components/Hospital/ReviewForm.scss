@@ -1,37 +1,37 @@
-.form{
-    &-wrapper{
-        width: 30rem;
-        height: 30rem;
-        margin: auto;
-        background: blue;
-        position: absolute;
-    }
+.form {
+  &-wrapper {
+    width: 30rem;
+    height: 30rem;
+    margin: auto;
+    background: blue;
+    position: absolute;
+  }
 }
-input{
-    &.form-check-input{
-        display: none;
-    }
-    &:checked ~ label,
-    &:checked ~ label ~ label{
-        color: yellowgreen;
-    }
+input {
+  &.form-check-input {
+    display: none;
+  }
+  &:checked ~ label,
+  &:checked ~ label ~ label {
+    color: yellowgreen;
+  }
 }
-.stars{
-    font-size: 3rem;
-    cursor: pointer;
+.stars {
+  font-size: 3rem;
+  cursor: pointer;
 }
 
-.btn-rev{
-    display: flex;
-    justify-content: center;
+.btn-rev {
+  display: flex;
+  justify-content: center;
 }
 
 .card-foot {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 
-    & button{
-        font-size: 2rem;
-    }
+  & button {
+    font-size: 2rem;
+  }
 }
