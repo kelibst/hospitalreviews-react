@@ -1,0 +1,163 @@
+$default-blue: rgb(79, 76, 233);
+
+@mixin default-gradient {
+  background: rgb(46, 34, 195);
+  background: linear-gradient(
+    180deg,
+    rgba(46, 34, 195, 1) 0%,
+    rgba(228, 45, 253, 1) 100%
+  );
+}
+
+@mixin default-gradient-reverse {
+  background: rgb(46, 34, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(46, 34, 195, 1) 0%,
+    rgba(228, 45, 253, 1) 100%
+  );
+}
+
+.bg {
+  &-default {
+    &-blue {
+      @include default-gradient();
+    }
+  }
+}
+
+.sidebar {
+  color: white;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.nav {
+  &-item {
+    margin: 0.7rem 0;
+  }
+  &-link {
+    transition: all 0.3s;
+  }
+
+  &-link.active,
+  &-link.active:focus {
+    padding: 1rem 0;
+    background: white;
+    border-radius: 1rem 0 0 1rem;
+    color: black !important;
+    width: 130%;
+    transform: scale(1.2);
+  }
+
+  &-icons {
+    font-size: 2rem;
+  }
+}
+
+.header {
+  &-content {
+    text-align: center;
+    font-size: 3rem;
+
+    &-image {
+      border-radius: 20rem;
+      @include default-gradient-reverse();
+      width: 4.5rem;
+      margin: auto;
+    }
+  }
+
+  &-title {
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+
+  &-description {
+    line-height: 1.8;
+    padding-top: 3rem;
+    padding-left: 1.8rem;
+  }
+}
+
+.user {
+  &-info {
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem;
+  }
+
+  &-logo {
+    padding: 0.5rem 0.7rem;
+    background: aliceblue;
+    border-radius: 3rem;
+    border: 1px solid blueviolet;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: violet;
+      color: wheat;
+      border: 1px solid black;
+    }
+  }
+
+  &-ui-user {
+    font-size: 1.3rem;
+  }
+
+  &-name {
+    font-weight: bolder;
+    align-self: center;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and(max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .mob {
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 10;
+  }
+
+  .bg-default-blue {
+    position: unset;
+    padding: 2rem 0;
+  }
+
+  .nav {
+    &-item {
+      margin: 0;
+    }
+    &-link {
+      transition: all 0.3s;
+    }
+
+    &-link.active,
+    &-link.active:focus {
+      padding: 1rem;
+      background: white;
+      border-radius: 1rem;
+      color: black !important;
+      height: 130%;
+      transform: scale(1.1);
+    }
+  }
+  .footer {
+    @include default-gradient();
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 2rem;
+  }
+}
